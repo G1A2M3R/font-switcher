@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Switcher</title>
+    <style>
+        body {
+            font-size: 2rem;
+            text-align: center;
+            margin: 20px;
+        }
+        #text {
+            transition: font-family 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">This text switches fonts every second!</div>
+    <script>
+        const fonts = ["Arial", "Georgia"];
+        let currentIndex = 0;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % fonts.length;
+            document.getElementById("text").style.fontFamily = fonts[currentIndex];
+        }, 1000);
+    </script>
+</body>
+</html>
